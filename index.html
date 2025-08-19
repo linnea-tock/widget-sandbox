@@ -14,7 +14,7 @@
     </script>
 
     <!-- Tock widget embed -->
-    <script>!function(t,o,c,k){if(!t.tock){var e=t.tock=function(){e.callMethod?    e.callMethod.apply(e,arguments):e.queue.push(arguments)};t._tock||(t._tock=e),    e.push=e,e.loaded=!0,e.version='1.0',e.queue=[];var f=o.createElement(c);f.async=!0,    f.src=k;var g=o.getElementsByTagName(c)[0];g.parentNode.insertBefore(f,g)}}(    window,document,'script','https://www.exploretock.com/tock.js');    tock('init', 'welcometotock');    </script>
+    <script>!function(t,o,c,k){if(!t.tock){var e=t.tock=function(){e.callMethod?    e.callMethod.apply(e,arguments):e.queue.push(arguments)};t._tock||(t._tock=e),    e.push=e,e.loaded=!0,e.version='1.0',e.queue=[];var f=o.createElement(c);f.async=!0,    f.src=k;var g=o.getElementsByTagName(c)[0];g.parentNode.insertBefore(f,g)}}(    window,document,'script','https://staging.exploretock.com/tock.js');    tock('init', 'welcometotock-staging');    </script>
 </head>
 <body>
     <h1>Welcome</h1>
@@ -26,8 +26,21 @@
     <a href="https://www.exploretock.com/welcometotock">Visit us</a>
 
     <!--
-        The Tock widget has some UA linker code in it, do events track through?
-        I am guessing no.  But what about the purchase on exploretock.com
+        Tock GA4 integration:
+        We get the customer's analytics ID - and send business page events
+        to their account.  This is independent of cross domain tracking.
+        todo - which events, any more than purchase?
+
+        Cross domain tracking:
+        This is all about tracking a single user across domains and not treating
+        cross domain actions as outbound links. A "gl" param is included in the URL 
+        to identify the user. (how can we validate Tock uses that param as designed)
+
+        In the widget we have some legacy UA code that tries to manually link the
+        iFrame SRC to the parent page if UA GA is on there. 
+
+        Assumption is right now that guests in the widget are not connected to
+        customer's domain
     -->
     <div id="Tock_widget_container" data-tock-display-mode="Button" data-tock-color-mode="Blue" data-tock-locale="en-us" data-tock-timezone="America/Chicago"></div>
 </body>
