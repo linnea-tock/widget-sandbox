@@ -14,7 +14,7 @@
     </script>
 
     <!-- Tock widget embed -->
-    <script>!function(t,o,c,k){if(!t.tock){var e=t.tock=function(){e.callMethod?    e.callMethod.apply(e,arguments):e.queue.push(arguments)};t._tock||(t._tock=e),    e.push=e,e.loaded=!0,e.version='1.0',e.queue=[];var f=o.createElement(c);f.async=!0,    f.src=k;var g=o.getElementsByTagName(c)[0];g.parentNode.insertBefore(f,g)}}(    window,document,'script','https://staging.exploretock.com/tock.js');    tock('init', 'welcometotock-staging');    </script>
+    <script>!function(t,o,c,k){if(!t.tock){var e=t.tock=function(){e.callMethod?    e.callMethod.apply(e,arguments):e.queue.push(arguments)};t._tock||(t._tock=e),    e.push=e,e.loaded=!0,e.version='1.0',e.queue=[];var f=o.createElement(c);f.async=!0,    f.src=k;var g=o.getElementsByTagName(c)[0];g.parentNode.insertBefore(f,g)}}(    window,document,'script','https://www.exploretock.com/tock.js');    tock('init', 'welcometotock');    </script>
 </head>
 <body>
     <h1>Welcome</h1>
@@ -22,6 +22,9 @@
     <!--
         When cross domain tracking is enabled, the gtag.js script will automatically
         append linker params to the URLs
+
+        To see the events end to end we use production
+        We don't send any events to a venue's GA account in staging
     -->
     <a href="https://www.exploretock.com/welcometotock">Visit us</a>
 
